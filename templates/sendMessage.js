@@ -5,7 +5,7 @@ module.exports = function sendMessage(recipientId, message){
         request({
             url: "https://graph.facebook.com/v2.6/me/messages",
             qs: {
-                access_token: process.env.PAGE_ACCESS_TOKEN
+                access_token: 'a2ef27aa0a9a442384fb83acf2a698c0'
             },
             method: "POST",
             json: {
