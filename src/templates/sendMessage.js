@@ -5,7 +5,7 @@ module.exports = function sendMessage(recipientId, message){
         request({
             url: "https://graph.facebook.com/v2.6/me/messages",
             qs: {
-                access_token: 'a2ef27aa0a9a442384fb83acf2a698c0'
+                access_token: 'EAATujzfc4pcBOzg9UxwtZCo6JhXWVHZA4KKqXCluDkGyLTWbNn4G4qv7i0BGkgOWhC2jfJnSx9WDk9hmelAEgyqjDVzfmZAp3iRp5klHrhv5ELIC5o4nb50UZCZBo7lUhLu7AgLtFRJclli5FXwG8xlooDETHB5Qr8YwTmcl1Palu7m7PPiQOZCZAUnl06vCAl3'
             },
             method: "POST",
             json: {
