@@ -6,7 +6,7 @@ const sendMessage = require('../templates/sendMessage');
      const senderID = event.sender.id;
      const payload = event.postback.payload;
 
-     if (payload === 'WELCOME') {
+     if (payload === 'Get Started') {
         request({
             url: "https://graph.facebook.com/v2.6/" + senderID,
             qs: {
@@ -36,5 +36,15 @@ const sendMessage = require('../templates/sendMessage');
                 });
             });
         });
+     }
+
+     if (payload === 'news') {
+        senderAction(senderID);
+        sendMessage(senderID, {text: 'Haha, no news('})
+     }
+
+     if (payload === 'meme') {
+        senderAction(senderID);
+        sendMessage(senderID, {text: 'Заходят как-то немец, француз и еврей в бар...'})
      }
  }

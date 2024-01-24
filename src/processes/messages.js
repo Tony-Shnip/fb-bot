@@ -11,7 +11,34 @@ module.exports = function processMessage(event) {
         console.log("Message is: " + JSON.stringify(message));
         if (message.text) {
             senderAction(senderID);
-            sendMessage(senderID, { text: '🎈' });
+            sendMessage(senderID, {
+                "message":{
+                    "attachment":{
+                      "type":"template",
+                      "payload":{
+                        "template_type":"button",
+                        "text":"What do you want to do next?",
+                        "buttons":[
+                            {
+                                "type": "postback",
+                                "title": "Get News",
+                                "payload": "news"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Get memes",
+                                "payload": "meme"
+                            },
+                            {
+                                "type":"web_url",
+                                "url":"https://www.messenger.com",
+                                "title":"Visit Messenger"
+                            }
+                        ]
+                      }
+                    }
+                  }
+            });
             // now we will take the text recieved and send it to an food tracking API.
             // let text = message.text;
             // var request = require("request");
