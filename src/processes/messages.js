@@ -10,32 +10,34 @@ module.exports = function processMessage(event) {
         console.log("Received message from senderId: " + senderID);
         console.log("Message is: " + JSON.stringify(message));
         if (message.text) {
+            senderAction(senderID);
+            sendMessage(senderID, { text: '🎈' });
             // now we will take the text recieved and send it to an food tracking API.
-            let text = message.text;
-            var request = require("request");
+            // let text = message.text;
+            // var request = require("request");
 
-            let options = {
-                method: 'POST',
-                url: 'https://mefit-preprod.herokuapp.com/api/getnutritionvalue',
-                headers:
-                {
-                    'cache-control': 'no-cache',
-                    'content-type': 'application/json'
-                },
-                body:
-                {
-                    userID: process.env.USERID,
-                    searchTerm: text
-                },
-                json: true
-            };
+            // let options = {
+            //     method: 'POST',
+            //     url: 'https://mefit-preprod.herokuapp.com/api/getnutritionvalue',
+            //     headers:
+            //     {
+            //         'cache-control': 'no-cache',
+            //         'content-type': 'application/json'
+            //     },
+            //     body:
+            //     {
+            //         userID: process.env.USERID,
+            //         searchTerm: text
+            //     },
+            //     json: true
+            // };
 
-            request(options, function (error, response, body) {
-                if (error) throw new Error(error);
-                senderAction(senderID);
-                // after the response is recieved we will send the details in a Generic template
-                sendGenericTemplate(senderID, body);
-            });
+            // request(options, function (error, response, body) {
+            //     if (error) throw new Error(error);
+            //     senderAction(senderID);
+            //     // after the response is recieved we will send the details in a Generic template
+            //     sendGenericTemplate(senderID, body);
+            // });
 
         }
     }

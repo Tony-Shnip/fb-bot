@@ -21,8 +21,8 @@ const sendMessage = require('../templates/sendMessage');
             } else {
                 let bodyObject = JSON.parse(body);
                 console.log(bodyObject);
-                name = bodyObject.first_name;
-                greeting = "Hello " + name  + ". ";
+                username = bodyObject.first_name;
+                greeting = "Hello " + username  + ". ";
             }
             let message = greeting + "Welcome to Healthbot. Hope you are doing good today";
             let message2 = "I am your nutrition tracker :-)"
