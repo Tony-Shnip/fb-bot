@@ -6,7 +6,7 @@ const sendMessage = require('../templates/sendMessage');
      const senderID = event.sender.id;
      const payload = event.postback.payload;
 
-     if (payload === 'Get Started') {
+     if (payload === 'Get starteeed pleaseeee') {
         request({
             url: "https://graph.facebook.com/v2.6/" + senderID,
             qs: {
