@@ -9,7 +9,7 @@ module.exports = function processMessage(event) {
         const senderID = event.sender.id;
         console.log("Received message from senderId: " + senderID);
         console.log("Message is: " + JSON.stringify(message));
-        onsole.log(message.text);
+        console.log(message.text);
         if (message.text === 'buttons') {
             senderAction(senderID);
             sendMessage(senderID, {
